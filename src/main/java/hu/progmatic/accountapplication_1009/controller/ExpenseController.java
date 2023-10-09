@@ -31,4 +31,10 @@ public class ExpenseController {
         expenseService.newExpense(expense);
         return "redirect:/expenses";
     }
+
+    @GetMapping("/biggestSpender")
+    public String findMostSpender(Model model) {
+        model.addAttribute("spender", expenseService.findBiggestSpender());
+        return "expense/biggestSpender";
+    }
 }

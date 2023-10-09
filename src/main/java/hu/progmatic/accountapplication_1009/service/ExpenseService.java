@@ -24,5 +24,7 @@ public class ExpenseService {
         expenseRepository.save(expense);
     }
 
-
+    public String findBiggestSpender() {
+        return expenseRepository.findBiggestSpender();
+    }
 }
