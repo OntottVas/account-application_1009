@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account App</title>
+</head>
+<body>
+<header>
+    <a href="addExpense">Create new expense</a>
+</header>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Place</th>
+        <th>Cost</th>
+        <th>Owner</th>
+    </tr>
+    </thead>
+    <tr th:each="expense : ${expenses}">
+        <td th:text="${expense.getId()}"></td>
+        <td th:text="${expense.getPlace()}"></td>
+        <td th:text="${expense.getCost()}"></td>
+        <td th:text="${expense.getOwner().getName()}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -18,13 +18,13 @@ public class OwnerController {
     @GetMapping("/owners")
     public String getAllGuests(Model model) {
         model.addAttribute("owners", ownerService.getAllOwners());
-        return "owners";
+        return "owner/owners";
     }
 
     @GetMapping("/addOwner")
     public String addNewOwner(Model model) {
         model.addAttribute("newOwner", new Owner());
-        return "addOwner";
+        return "owner/addOwner";
     }
 
     @PostMapping("/addOwner")
@@ -35,7 +35,7 @@ public class OwnerController {
 
     @GetMapping("/modifyName")
     public String modifyOwnerName() {
-        return "modifyName";
+        return "owner/modifyName";
     }
 
     @PostMapping("/modifyName")
@@ -45,9 +45,9 @@ public class OwnerController {
         return "redirect:/owners";
     }
 
-    @GetMapping("modifyOwnerEmail")
+    @GetMapping("modifyEmail")
     public String modifyOwnerEmail() {
-        return "modifyEmail";
+        return "owner/modifyEmail";
     }
 
     @PostMapping("/modifyEmail")
@@ -59,7 +59,7 @@ public class OwnerController {
 
     @GetMapping("/deleteOwner")
     public String deleteOwner() {
-        return "deleteOwner";
+        return "owner/deleteOwner";
     }
 
     @PostMapping("/deleteOwner")

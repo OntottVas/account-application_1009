@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account App</title>
+</head>
+<body>
+<form th:action="@{/addExpense}" method="post">
+  <label> Place:
+    <input th:field="*{newExpense.place}" placeholder="" type="text" id="place" title="place">
+  </label>
+  <label> Cost:
+    <input  th:field="*{newExpense.cost}" placeholder="" type="number" id="cost" title="cost">
+  </label>
+  <label> Owner's name:
+    <input  th:field="*{newExpense.owner}" placeholder="" type="text" id="owner" title="owner">
+  </label>
+
+  <button type="submit">Submit</button>
+
+</form>
+</body>
+</html>

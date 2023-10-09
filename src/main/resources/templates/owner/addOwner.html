@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Account app</title>
+    <title>Account App</title>
 </head>
 <body>
 <form th:action="@{/addOwner}" method="post">
   <label> Name:
-    <input th:field="*{newOwner.name}" placeholder="" type="text" id="title" title="title">
+    <input th:field="*{newOwner.name}" placeholder="" type="text" id="name" title="name">
   </label>
   <label> Place of birth:
-    <input  th:field="*{newOwner.placeOfBirth}" placeholder="" type="text" id="last_name" title="last_name">
+    <input  th:field="*{newOwner.placeOfBirth}" placeholder="" type="text" id="placeOfBirth" title="placeOfBirth">
   </label>
   <label> Time of birth:
-    <input  th:field="*{newOwner.timeOfBirth}" placeholder="" type="date" id="birth_time" title="birth_time"
-            value="2023-01-01" min="1901-01-01" max="2023-10-05">
+    <input  th:field="*{newOwner.timeOfBirth}" placeholder="" type="date" id="timeOfBirth" title="timeOfBirth"
+            value="" min="1901-01-01" max="2023-10-05">
   </label>
   <label> Email address:
     <input  th:field="*{newOwner.email}" placeholder="" type="text" id="email" title="email">
