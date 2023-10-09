@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS account_database;
+
+USE account_database;
+
+CREATE TABLE IF NOT EXISTS owner (
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    place_of_birth VARCHAR(50),
+    time_of_birth DATE,
+    email VARCHAR(40)
+);
+
+CREATE TABLE IF NOT EXISTS expense (
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    place VARCHAR(50),
+    cost INT,
+    owner_id BIGINT,
+	FOREIGN KEY (owner_id) REFERENCES owner(id)
+);
+
+INSERT INTO owner (name, place_of_birth, time_of_birth, email)
+VALUES ('Geri', 'Bp', '1990-01-01', 'ge@ri.com'),
+		('Feri', 'Bp', '1991-02-02', 'fe@ri.com'),
+        ('Teri', 'Bp', '1992-03-01', 'te@ri.com'),
+        ('Bandi', 'Bp', '1993-04-01', 'ba@ndi.com'),
+        ('Zoli', 'Bp', '1994-05-06', 'zo@li.com');
+
+INSERT INTO expense(place, cost, owner_id)
+VALUES ('OBI', 150000, 1),
+		('Praktiker', 200000, 1),
+        ('Spar', 15000, 2),
+        ('Aldi', 30000, 3),
+        ('Lidl', 5250, 3);
